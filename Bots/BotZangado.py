@@ -2,7 +2,7 @@ from Bots.Bot import Bot
 from Comando.Comando import Comando
 
 class BotZangado(Bot):
-    def __init__(self,nome):
+    def __init__(self, nome):
         super().__init__(nome)
         self.__comandoBoasVindas = Comando(1, "Bom dia", self.boas_vindas())
         self.__comandoNome = Comando(2, "Qual o seu nome?", self.respostaNome())
@@ -13,7 +13,7 @@ class BotZangado(Bot):
         return(f"Grrrrrr. Meu nome é {self.nome} e eu te odeio!")
  
     def mostra_comandos(self):
-        return(f"""{self.__comandoBoasVindas.id()} - {self.__comandoBoasVindas.mensagem()}\n{self.__comandoNome.id()} - {self.__comandoNome.mensagem}\n{self.__comandoConselho.id()} - {self.__comandoConselho.mensagem()}\n{self.__comandoAdeus.id()} - {self.__comandoAdeus.mensagem()}""")
+        return(f"""{self.__comandoBoasVindas.id} - {self.__comandoBoasVindas.mensagem}\n{self.__comandoNome.id} - {self.__comandoNome.mensagem}\n{self.__comandoConselho.id} - {self.__comandoConselho.mensagem}\n{self.__comandoAdeus.id} - {self.__comandoAdeus.mensagem}""")
     
     def executa_comando(self,cmd):
         if cmd == 1:
@@ -32,13 +32,13 @@ class BotZangado(Bot):
             return ("Comando inválido")
 
     def boas_vindas(self):
-        return(["Olá, como você vai me encher o saco hoje?"])
+        return("Olá, como você vai me encher o saco hoje?")
     
     def conselho(self):
-        return(["Não tenho filho desse tamanho."])
+        return("Não tenho filho desse tamanho.")
 
     def despedida(self):
-        return(["Já vai tarde. Adeus."])
+        return("Já vai tarde. Adeus.")
     
     def respostaNome(self):
-        return([f"{self.nome}, quantas tenho tenho que repetir?"])
+        return(f"{self.nome}, quantas tenho tenho que repetir?")
