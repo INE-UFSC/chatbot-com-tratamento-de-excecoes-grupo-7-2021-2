@@ -3,7 +3,7 @@ from Comando.Comando import Comando
 
 class BotTriste(Bot):
     def __init__(self,nome):
-        self.__nome = nome
+        super().__init__(nome)
         self.__comandoBoasVindas = Comando(1, "Bom dia", self.boas_vindas())
         self.__comandoNome = Comando(2, "Qual o seu nome?", self.respostaNome())
         self.__comandoConselho = Comando(3, "Quero um conselho", self.conselho())
