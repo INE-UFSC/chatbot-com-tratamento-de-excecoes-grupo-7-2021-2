@@ -41,10 +41,14 @@ class SistemaChatBot:
         ##mostra os comandos disponíveis no bot escolhido
 
     def le_envia_comando(self):
-        comando = int(input('Digite o comando desejado (ou -1 para fechar o comando):'))
-        if comando == -1:
-            return True
-        else: 
+        comando = input('Digite o comando desejado (ou -1 para fechar o comando):')
+        try:
+            comando = int(comando)
+            if comando == -1:
+                return True
+            else: 
+                print(self.__bot.executa_comando(comando))
+        except:
             print(self.__bot.executa_comando(comando))
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 
